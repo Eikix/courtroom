@@ -20,5 +20,63 @@ export function defineContractComponents(world: World) {
         }
       );
     })(),
+    Crime: (() => {
+      const tableId = new TableId("", "Crime");
+      return defineComponent(
+        world,
+        {
+          name: RecsType.String,
+          year: RecsType.Number,
+          description: RecsType.String,
+        },
+        {
+          metadata: {
+            contractId: tableId.toHexString(),
+            tableId: tableId.toString(),
+          },
+        }
+      );
+    })(),
+    Game: (() => {
+      const tableId = new TableId("", "Game");
+      return defineComponent(
+        world,
+        {
+          crime: RecsType.String,
+          player: RecsType.String,
+          isGuilty: RecsType.Boolean,
+          openingStatement: RecsType.String,
+          closingStatement: RecsType.String,
+          victimQuestionOne: RecsType.String,
+          victimQuestionTwo: RecsType.String,
+          victimQuestionThree: RecsType.String,
+          victimAnswerOne: RecsType.String,
+          victimAnswerTwo: RecsType.String,
+          victimAnswerThree: RecsType.String,
+          verdict: RecsType.String,
+        },
+        {
+          metadata: {
+            contractId: tableId.toHexString(),
+            tableId: tableId.toString(),
+          },
+        }
+      );
+    })(),
+    Player: (() => {
+      const tableId = new TableId("", "Player");
+      return defineComponent(
+        world,
+        {
+          gameCount: RecsType.Number,
+        },
+        {
+          metadata: {
+            contractId: tableId.toHexString(),
+            tableId: tableId.toString(),
+          },
+        }
+      );
+    })(),
   };
 }
