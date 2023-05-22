@@ -10,5 +10,6 @@
   "arrowParens": "avoid",
   "proseWrap": "preserve",
   "htmlWhitespaceSensitivity": "css",
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

@@ -25,14 +25,18 @@
     "@wagmi/chains": "^0.2.22",
     "contracts": "workspace:*",
     "ethers": "^5.7.2",
+    "framer-motion": "^10.12.12",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2",
+    "react-type-animation": "^3.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
+    "daisyui": "^2.51.6",
     "eslint-plugin-react": "7.31.11",
     "eslint-plugin-react-hooks": "4.6.0",
     "postcss": "^8.4.23",

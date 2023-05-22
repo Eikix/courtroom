@@ -4,5 +4,9 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  daisyui: {
+    themes: ["synthwave"],
+  },
+  // eslint-disable-next-line no-undef
+  plugins: [require("daisyui")],
 };
