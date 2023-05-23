@@ -8,8 +8,9 @@ import { Courtroom } from "./Courtroom";
 import { NotFound } from "./404";
 import { Game } from "./Game";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { WagmiConfig, createConfig, sepolia } from "wagmi";
+import { WagmiConfig, createConfig } from "wagmi";
 import { createPublicClient, http } from "viem";
+import { localhost } from "@wagmi/chains";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -17,7 +18,7 @@ const queryClient = new QueryClient();
 const config = createConfig({
   autoConnect: true,
   publicClient: createPublicClient({
-    chain: sepolia,
+    chain: localhost,
     transport: http(),
   }),
 });
@@ -47,13 +48,14 @@ const router = createBrowserRouter([
 // TODO: figure out if we actually want this to be async or if we should render something else in the meantime
 setup().then(result => {
   root.render(
-    <QueryClientProvider client={queryClient}>
-      <MUDProvider value={result}>
-        <WagmiConfig config={config}>
+    <WagmiConfig config={config}>
+      <QueryClientProvider client={queryClient}>
+        <MUDProvider value={result}>
           <RouterProvider router={router} />
-        </WagmiConfig>
-      </MUDProvider>
-    </QueryClientProvider>,
+        </MUDProvider>
+      </QueryClientProvider>
+      ,
+    </WagmiConfig>,
   );
   mountDevTools();
 });
