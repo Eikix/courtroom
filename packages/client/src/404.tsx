@@ -6,7 +6,7 @@ export const NotFound = () => {
       <Navbar />
       <div className="flex min-h-[200px] w-full flex-col items-center justify-center md:min-h-[600px] lg:min-h-[768px]">
         <p className="from-primary to-neutral max-w-md rounded-md bg-gradient-to-br p-4 font-mono text-3xl font-extrabold md:max-w-xl md:text-4xl">
-          What you are looking for cannot be found, be gone!
+          Oops! I am afraid what you are looking for cannot be found.
         </p>
       </div>
     </div>

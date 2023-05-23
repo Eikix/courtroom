@@ -22,6 +22,7 @@
     "@latticexyz/std-client": "2.0.0-alpha.1.175+641d0d35",
     "@latticexyz/utils": "2.0.0-alpha.1.175+641d0d35",
     "@latticexyz/world": "2.0.0-alpha.1.175+641d0d35",
+    "@tanstack/react-query": "^4.29.7",
     "@wagmi/chains": "^0.2.22",
     "contracts": "workspace:*",
     "ethers": "^5.7.2",
@@ -29,7 +30,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
-    "react-type-animation": "^3.0.1"
+    "react-type-animation": "^3.0.1",
+    "server": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.6",

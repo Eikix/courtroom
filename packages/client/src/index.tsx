@@ -7,6 +7,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Courtroom } from "./Courtroom";
 import { NotFound } from "./404";
 import { Game } from "./Game";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+// Create a client
+const queryClient = new QueryClient();
 
 const rootElement = document.getElementById("react-root");
 if (!rootElement) throw new Error("React root not found");
@@ -33,9 +37,11 @@ const router = createBrowserRouter([
 // TODO: figure out if we actually want this to be async or if we should render something else in the meantime
 setup().then(result => {
   root.render(
-    <MUDProvider value={result}>
-      <RouterProvider router={router} />
-    </MUDProvider>,
+    <QueryClientProvider client={queryClient}>
+      <MUDProvider value={result}>
+        <RouterProvider router={router} />
+      </MUDProvider>
+    </QueryClientProvider>,
   );
   mountDevTools();
 });

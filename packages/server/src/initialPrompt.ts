@@ -1,4 +1,4 @@
-import { ChatCompletionRequestMessage } from 'openai';
+import { ChatCompletionRequestMessage } from "openai";
 
 export const inlineCrimeCase = (crimeCase: {
   name: string;
@@ -8,7 +8,7 @@ export const inlineCrimeCase = (crimeCase: {
 };
 
 export const INITIAL_PROMPT: ChatCompletionRequestMessage = {
-  role: 'system',
+  role: "system",
   content: `
 As an AI agent, you will be playing the roles of the Victim and the Judge in a simulated legal game centered around key events in cryptocurrency history. The game comprises four phases:
 
