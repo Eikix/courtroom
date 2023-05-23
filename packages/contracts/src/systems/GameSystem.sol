@@ -18,4 +18,15 @@ contract GameSystem is System {
     Game.set(id, crime, _msgSender(), true, "", "", "", "", "", "", "", "", "");
     return id;
   }
+
+  // Todo: Add a function to register an interaction for each interaction to be committed on chain
+  // function registerInteraction(bytes32 game, uint8 phase, string memory interaction) public {
+  //   // Get the game's data
+  //   // Set the game's data
+  // }
+
+  function endGame(bytes32 gameId, bool isGuilty) public {
+    // Set the game's verdict
+    Game.setIsGuilty(gameId, isGuilty);
+  }
 }

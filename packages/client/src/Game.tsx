@@ -66,15 +66,23 @@ export const Game = () => {
   return (
     <div className="min-w-screen flex min-h-screen flex-col items-center justify-between bg-[url('assets/img/attorney-female.png')] bg-cover bg-top bg-no-repeat p-4">
       <Navbar />
-      <div>
+      <div className="flex flex-col gap-3">
         {injectedPrompts.map(prompt => (
           <div
             key={prompt.content}
-            className={
-              "chat" + prompt.role === "user" ? "chat-start" : "chat-end"
-            }
+            className={`chat ${
+              prompt.role === "user" ? "chat-start" : "chat-end"
+            }`}
           >
-            <div className="chat-bubble">{prompt.content}</div>
+            <div
+              className={`chat-bubble ${
+                prompt.role === "user"
+                  ? "chat-bubble-neutral"
+                  : "chat-bubble-primary"
+              }`}
+            >
+              {prompt.content}
+            </div>
           </div>
         ))}
       </div>
@@ -84,7 +92,7 @@ export const Game = () => {
           onSubmit={handleInteract}
         >
           <textarea
-            className="textarea flex h-48 w-screen max-w-xl items-start justify-start p-3 text-start text-lg md:text-xl"
+            className="textarea flex h-48 w-screen max-w-xl items-start justify-start p-3 text-start text-lg placeholder-white md:text-xl"
             placeholder="Time to lawyer up!"
             value={currentPrompt}
             onChange={handleTextInput}

@@ -31,7 +31,9 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "react-type-animation": "^3.0.1",
-    "server": "workspace:*"
+    "server": "workspace:*",
+    "viem": "^0.3.35",
+    "wagmi": "^1.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.6",

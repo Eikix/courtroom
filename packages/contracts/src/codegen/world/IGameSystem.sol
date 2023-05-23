@@ -5,4 +5,6 @@ pragma solidity >=0.8.0;
 
 interface IGameSystem {
   function create(bytes32 crime) external returns (bytes32);
+
+  function endGame(bytes32 gameId, bool isGuilty) external;
 }

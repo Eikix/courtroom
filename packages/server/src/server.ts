@@ -112,8 +112,10 @@ app.post("/interact", async (req, res) => {
     // *****
     // *****
 
+    const { message } = JSON.parse(completion.choices[0].message?.content);
+
     const responsePayload = {
-      content: completion.choices[0].message?.content,
+      content: message,
       role: "assistant",
     };
 

@@ -8,9 +8,19 @@ import { Courtroom } from "./Courtroom";
 import { NotFound } from "./404";
 import { Game } from "./Game";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { WagmiConfig, createConfig, sepolia } from "wagmi";
+import { createPublicClient, http } from "viem";
 
 // Create a client
 const queryClient = new QueryClient();
+
+const config = createConfig({
+  autoConnect: true,
+  publicClient: createPublicClient({
+    chain: sepolia,
+    transport: http(),
+  }),
+});
 
 const rootElement = document.getElementById("react-root");
 if (!rootElement) throw new Error("React root not found");
@@ -39,7 +49,9 @@ setup().then(result => {
   root.render(
     <QueryClientProvider client={queryClient}>
       <MUDProvider value={result}>
-        <RouterProvider router={router} />
+        <WagmiConfig config={config}>
+          <RouterProvider router={router} />
+        </WagmiConfig>
       </MUDProvider>
     </QueryClientProvider>,
   );
